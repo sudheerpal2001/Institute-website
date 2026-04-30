@@ -1,211 +1,228 @@
 import React, { useState } from 'react';
-import { GraduationCap, Scale, BookOpen, School, Building2, Library, ChevronRight, X, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, X, ChevronRight } from 'lucide-react';
 
+// ─── Data ──────────────────────────────────────────────────────────
 const institutions = [
   {
-    name: "Dr. Rizvi College of Engineering",
-    description: "Approved by AICTE, New Delhi & affiliated to AKTU, Lucknow",
-    icon: GraduationCap,
-    courses: "B.Tech, MBA, Polytechnic Diploma",
-    bgColor: "bg-blue-50",
-    iconColor: "text-blue-600",
-    accentColor: "bg-blue-600",
-
-    // --- Modal Details ---
-    code: "College Code: 310",
-    address: "Karari, Kaushambi (U.P.) — 212206",
-    intro: "Rizvi Group offers four-year (full time) AICTE approved B.Tech programmes in relevant engineering branches, along with a two-year (full time) MBA programme and 3-year Polytechnic Diploma.",
-    sections: [
-      {
-        label: "Bachelor of Technology (B.Tech)",
-        courses: [
-          { name: "Computer Science (CS)", seats: "60 Seats" },
-          { name: "Civil Engineering (CE)", seats: "60 Seats" },
-          { name: "Electronics & Communication (EC)", seats: "60 Seats" },
-          { name: "Electrical & Electronics (EN)", seats: "60 Seats" },
-          { name: "Mechanical Engineering (ME)", seats: "60 Seats" },
-        ],
-      },
-      {
-        label: "Master of Business Administration (MBA)",
-        courses: [{ name: "MBA (Full Time, 2 Years)", seats: "" }],
-      },
-      {
-        label: "Polytechnic Diploma (3 Years)",
-        courses: [
-          { name: "Mechanical Production", seats: "60 Seats" },
-          { name: "Electrical & Electronics Engineering", seats: "" },
-        ],
-      },
-    ],
-    toll_free: "1800-200-5802",
-    email: "contactus@drce.org",
-    website: "www.drce.org",
+    name: "Dr. Rizvi College of Engineering & Management",
+    affiliation: "AICTE Approved · AKTU, Lucknow · Code: 310",
+    icon: "⚙️",
+    desc: "Full-time AICTE-approved B.Tech programs in Computer Science, Civil, Electronics & Communication, Electrical & Electronics, and Mechanical Engineering. Also offers MBA and 3-year Polytechnic Diploma.",
+    courses: ["B.Tech (CS)", "B.Tech (CE)", "B.Tech (EC)", "B.Tech (ME)", "MBA", "Polytechnic"],
+    website: { url: "http://www.drce.org", label: "www.drce.org" },
+    accentClass: "from-indigo-500 to-indigo-700",
+    modal: {
+      code: "College Code: 310",
+      address: "Karari, Kaushambi (U.P.) — 212206",
+      intro:
+        "Rizvi Group offers four-year AICTE approved B.Tech programmes in relevant engineering branches, along with a two-year MBA programme and 3-year Polytechnic Diploma.",
+      sections: [
+        {
+          label: "Bachelor of Technology (B.Tech)",
+          courses: [
+            { name: "Computer Science (CS)", seats: "60 Seats" },
+            { name: "Civil Engineering (CE)", seats: "60 Seats" },
+            { name: "Electronics & Communication (EC)", seats: "60 Seats" },
+            { name: "Electrical & Electronics (EN)", seats: "60 Seats" },
+            { name: "Mechanical Engineering (ME)", seats: "60 Seats" },
+          ],
+        },
+        {
+          label: "Master of Business Administration",
+          courses: [{ name: "MBA (Full Time, 2 Years)", seats: "" }],
+        },
+        {
+          label: "Polytechnic Diploma (3 Years)",
+          courses: [
+            { name: "Mechanical Production", seats: "60 Seats" },
+            { name: "Electrical & Electronics Engineering", seats: "" },
+          ],
+        },
+      ],
+      toll_free: "1800-200-5802",
+      email: "contactus@drce.org",
+      website: "www.drce.org",
+    },
   },
   {
     name: "Dr. Rizvi College of Law",
-    description: "Affiliated to Prof. Rajendra Singh University & Approved by BCI",
-    icon: Scale,
-    courses: "LL.B. (3 Year)",
-    bgColor: "bg-purple-50",
-    iconColor: "text-purple-600",
-    accentColor: "bg-purple-600",
-    code: "",
-    address: "Karari, Kaushambi (U.P.) — 212206",
-    intro: "Dr. Rizvi College of Law is recognized by the Bar Council of India (BCI) and offers a three-year LL.B. programme to develop skilled legal professionals.",
-    sections: [
-      {
-        label: "Course Offered",
-        courses: [{ name: "LL.B. — Bachelor of Laws (3 Years)", seats: "" }],
-      },
-    ],
-    toll_free: "1800-200-5802",
-    email: "admissions@rizvigroup.org",
-    website: "",
+    affiliation: "BCI Approved · Rajju Bhaiya University · Code: 03060",
+    icon: "⚖️",
+    desc: "Bar Council of India approved 3-year LLB and 5-year integrated BA.LLB programs affiliated to Prof. Rajendra Singh (Rajju Bhaiya) University, Prayagraj. Experienced legal faculty.",
+    courses: ["LL.B. (3 Years)", "BA.LLB (5 Years)"],
+    website: { url: "http://rizvilaw.in", label: "rizvilaw.in" },
+    accentClass: "from-violet-500 to-violet-700",
+    modal: {
+      code: "College Code: 03060",
+      address: "Karari, Kaushambi (U.P.) — 212206",
+      intro:
+        "Dr. Rizvi College of Law is recognized by the Bar Council of India (BCI) and offers LLB programmes to develop skilled legal professionals.",
+      sections: [
+        {
+          label: "Courses Offered",
+          courses: [
+            { name: "LL.B. — Bachelor of Laws (3 Years)", seats: "" },
+            { name: "BA.LLB — Integrated (5 Years)", seats: "" },
+          ],
+        },
+      ],
+      toll_free: "1800-200-5802",
+      email: "admissions@rizvigroup.org",
+      website: "rizvilaw.in",
+    },
   },
   {
     name: "Dr. Rizvi College of Education",
-    description: "Approved by NCTE & affiliated to SCERT, Uttar Pradesh",
-    icon: BookOpen,
-    courses: "B.Ed., D.El.Ed.",
-    bgColor: "bg-green-50",
-    iconColor: "text-green-600",
-    accentColor: "bg-green-600",
-    code: "",
-    address: "Karari, Kaushambi (U.P.) — 212206",
-    intro: "Dr. Rizvi College of Education is approved by NCTE and is dedicated to producing highly qualified and skilled teachers through its professional education programmes.",
-    sections: [
-      {
-        label: "Courses Offered",
-        courses: [
-          { name: "B.Ed. — Bachelor of Education (2 Years)", seats: "" },
-          { name: "D.El.Ed. — Diploma in Elementary Education (2 Years)", seats: "" },
-        ],
-      },
-    ],
-    toll_free: "1800-200-5802",
-    email: "admissions@rizvigroup.org",
-    website: "",
+    affiliation: "NCTE Approved · SCERT, Uttar Pradesh",
+    icon: "📖",
+    desc: "Two-year B.Ed. and D.El.Ed. programs approved by National Council for Teacher Education, shaping tomorrow's educators with modern pedagogy and hands-on training.",
+    courses: ["B.Ed.", "D.El.Ed."],
+    website: { url: "http://www.rizvidegree.co.in", label: "rizvidegree.co.in" },
+    accentClass: "from-emerald-500 to-emerald-700",
+    modal: {
+      code: "",
+      address: "Karari, Kaushambi (U.P.) — 212206",
+      intro:
+        "Dr. Rizvi College of Education is approved by NCTE and is dedicated to producing highly qualified and skilled teachers through its professional education programmes.",
+      sections: [
+        {
+          label: "Courses Offered",
+          courses: [
+            { name: "B.Ed. — Bachelor of Education (2 Years)", seats: "" },
+            { name: "D.El.Ed. — Diploma in Elementary Education (2 Years)", seats: "" },
+          ],
+        },
+      ],
+      toll_free: "1800-200-5802",
+      email: "admissions@rizvigroup.org",
+      website: "",
+    },
   },
   {
     name: "Dr. A. H. Rizvi Degree College",
-    description: "Affiliated to Prof. Rajendra Singh University",
-    icon: Building2,
-    courses: "Arts, Science & Commerce",
-    bgColor: "bg-orange-50",
-    iconColor: "text-orange-600",
-    accentColor: "bg-orange-600",
-    code: "",
-    address: "Karari, Kaushambi (U.P.) — 212206",
-    intro: "Dr. A.H. Rizvi Degree College offers undergraduate programmes in Arts, Science, and Commerce streams, providing a strong academic foundation for students.",
-    sections: [
-      {
-        label: "Streams Offered",
-        courses: [
-          { name: "Bachelor of Arts (B.A.)", seats: "" },
-          { name: "Bachelor of Science (B.Sc.)", seats: "" },
-          { name: "Bachelor of Commerce (B.Com.)", seats: "" },
-        ],
-      },
-    ],
-    toll_free: "1800-200-5802",
-    email: "admissions@rizvigroup.org",
-    website: "",
+    affiliation: "Rajju Bhaiya University · Code: 03063",
+    icon: "🎓",
+    desc: "Three-year graduation programs in Arts, Science & Commerce. Wide subject combinations including Hindi, English, History, Economics, Mathematics, Biological Science, and more.",
+    courses: ["B.A.", "B.Sc.", "B.Com."],
+    website: { url: "http://www.rizvidegree.co.in", label: "rizvidegree.co.in" },
+    accentClass: "from-amber-500 to-amber-700",
+    modal: {
+      code: "College Code: 03063",
+      address: "Karari, Kaushambi (U.P.) — 212206",
+      intro:
+        "Dr. A.H. Rizvi Degree College offers undergraduate programmes in Arts, Science, and Commerce streams, providing a strong academic foundation for students.",
+      sections: [
+        {
+          label: "Streams Offered",
+          courses: [
+            { name: "Bachelor of Arts (B.A.)", seats: "" },
+            { name: "Bachelor of Science (B.Sc.)", seats: "" },
+            { name: "Bachelor of Commerce (B.Com.)", seats: "" },
+          ],
+        },
+      ],
+      toll_free: "1800-200-5802",
+      email: "admissions@rizvigroup.org",
+      website: "",
+    },
   },
   {
     name: "Dr. Rizvi Springfield School",
-    description: "Affiliated to CBSE, New Delhi (10+2 Level)",
-    icon: School,
-    courses: "English Medium School",
-    bgColor: "bg-red-50",
-    iconColor: "text-red-600",
-    accentColor: "bg-red-600",
-    code: "",
-    address: "Karari, Kaushambi (U.P.) — 212206",
-    intro: "Dr. Rizvi Springfield School is an English medium school affiliated to CBSE, New Delhi, offering classes from primary level up to 10+2 in a nurturing campus environment.",
-    sections: [
-      {
-        label: "School Details",
-        courses: [
-          { name: "English Medium — Classes I to XII (CBSE)", seats: "" },
-          { name: "Science, Commerce & Arts streams (XI-XII)", seats: "" },
-        ],
-      },
-    ],
-    toll_free: "1800-200-5802",
-    email: "admissions@rizvigroup.org",
-    website: "",
+    affiliation: "CBSE Affiliated · New Delhi · Karari, Kaushambi",
+    icon: "🏫",
+    desc: "English medium CBSE school offering holistic education from Classes I–XII. Highly qualified faculty, modern facilities, and an environment that goes beyond classroom learning.",
+    courses: ["Classes I–XII", "CBSE"],
+    website: { url: "http://www.drsf.co.in", label: "drsf.co.in" },
+    accentClass: "from-rose-500 to-rose-700",
+    modal: {
+      code: "",
+      address: "Karari, Kaushambi (U.P.) — 212206",
+      intro:
+        "Dr. Rizvi Springfield School is a CBSE affiliated English medium school offering classes from primary level up to 10+2 in a nurturing campus environment.",
+      sections: [
+        {
+          label: "School Details",
+          courses: [
+            { name: "English Medium — Classes I to XII (CBSE)", seats: "" },
+            { name: "Science, Commerce & Arts streams (XI–XII)", seats: "" },
+          ],
+        },
+      ],
+      toll_free: "1800-200-5802",
+      email: "admissions@rizvigroup.org",
+      website: "drsf.co.in",
+    },
   },
   {
-    name: "Dr. Rizvi Learner's Academy",
-    description: "Affiliated to CBSE, New Delhi (10+2 Level)",
-    icon: Library,
-    courses: "English Medium School",
-    bgColor: "bg-teal-50",
-    iconColor: "text-teal-600",
-    accentColor: "bg-teal-600",
-    code: "",
-    address: "Karari, Kaushambi (U.P.) — 212206",
-    intro: "Dr. Rizvi Learner's Academy is a CBSE affiliated English medium school focused on holistic development and academic excellence from an early age.",
-    sections: [
-      {
-        label: "School Details",
-        courses: [
-          { name: "English Medium — Classes I to XII (CBSE)", seats: "" },
-          { name: "Science, Commerce & Arts streams (XI-XII)", seats: "" },
-        ],
-      },
-    ],
-    toll_free: "1800-200-5802",
-    email: "admissions@rizvigroup.org",
-    website: "",
+    name: "Dr. Rizvi Learners' Academy",
+    affiliation: "CBSE Affiliated · Jaunpur, Uttar Pradesh",
+    icon: "✏️",
+    desc: "English medium CBSE school in Jaunpur dedicated to academic excellence and student development with qualified educators and comprehensive school facilities.",
+    courses: ["Classes I–XII", "CBSE"],
+    website: { url: "http://www.rlajnp.co.in", label: "rlajnp.co.in" },
+    accentClass: "from-cyan-500 to-cyan-700",
+    modal: {
+      code: "",
+      address: "Jaunpur, Uttar Pradesh",
+      intro:
+        "Dr. Rizvi Learner's Academy is a CBSE affiliated English medium school focused on holistic development and academic excellence from an early age.",
+      sections: [
+        {
+          label: "School Details",
+          courses: [
+            { name: "English Medium — Classes I to XII (CBSE)", seats: "" },
+            { name: "Science, Commerce & Arts streams (XI–XII)", seats: "" },
+          ],
+        },
+      ],
+      toll_free: "1800-200-5802",
+      email: "admissions@rizvigroup.org",
+      website: "rlajnp.co.in",
+    },
   },
 ];
 
-// ─── Modal Component ───────────────────────────────────────────────
+// ─── Modal ─────────────────────────────────────────────────────────
 const InstitutionModal = ({ inst, onClose }) => {
   if (!inst) return null;
+  const m = inst.modal;
 
   return (
-    // Backdrop
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
       onClick={onClose}
     >
-      {/* Modal Box */}
       <div
         className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header strip */}
-        <div className={`${inst.accentColor} h-2 rounded-t-2xl`} />
+        {/* Accent top bar */}
+        <div className={`h-1.5 rounded-t-2xl bg-gradient-to-r ${inst.accentClass}`} />
 
-        {/* Close Button */}
+        {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 rounded-full p-1.5 transition"
+          className="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 rounded-full p-1.5 transition-colors"
         >
           <X className="h-4 w-4 text-gray-600" />
         </button>
 
         <div className="p-6">
-          {/* Icon + Title */}
-          <div className={`inline-flex p-3 rounded-xl ${inst.bgColor} mb-4`}>
-            <inst.icon className={`h-7 w-7 ${inst.iconColor}`} />
-          </div>
+          {/* Icon + title */}
+          <div className="text-4xl mb-3">{inst.icon}</div>
           <h3 className="text-xl font-bold text-gray-900 mb-1">{inst.name}</h3>
-          <p className="text-sm text-gray-500 mb-1">{inst.description}</p>
-          {inst.code && (
-            <span className="inline-block text-xs font-medium bg-gray-100 text-gray-600 px-3 py-1 rounded-full mb-3">
-              {inst.code}
+          <p className="text-xs text-indigo-600 font-semibold mb-2">{inst.affiliation}</p>
+          {m.code && (
+            <span className="inline-block text-xs font-medium bg-gray-100 text-gray-500 px-3 py-1 rounded-full mb-3">
+              {m.code}
             </span>
           )}
-          <p className="text-gray-600 text-sm leading-relaxed mt-2 mb-5">{inst.intro}</p>
+          <p className="text-sm text-gray-600 leading-relaxed mt-2 mb-5">{m.intro}</p>
 
-          {/* Courses */}
-          {inst.sections.map((section, si) => (
+          {/* Sections */}
+          {m.sections.map((section, si) => (
             <div key={si} className="mb-4">
-              <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-gray-400 mb-2">
                 {section.label}
               </p>
               <div className="border border-gray-100 rounded-xl overflow-hidden">
@@ -228,43 +245,45 @@ const InstitutionModal = ({ inst, onClose }) => {
             </div>
           ))}
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div className="mt-5 bg-gray-50 rounded-xl p-4 space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">Contact</p>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <MapPin className="h-4 w-4 text-gray-400 shrink-0" />
-              <span>{inst.address}</span>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-gray-400 mb-3">
+              Contact
+            </p>
+            <div className="flex items-start gap-2 text-sm text-gray-600">
+              <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
+              <span>{m.address}</span>
             </div>
-            {inst.toll_free && (
+            {m.toll_free && (
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Phone className="h-4 w-4 text-gray-400 shrink-0" />
-                <a href={`tel:${inst.toll_free.replace(/-/g, '')}`} className="hover:text-primary transition">
-                  Toll Free: {inst.toll_free}
+                <a href={`tel:${m.toll_free.replace(/-/g, '')}`} className="hover:text-indigo-600 transition-colors">
+                  Toll Free: {m.toll_free}
                 </a>
               </div>
             )}
-            {inst.email && (
+            {m.email && (
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Mail className="h-4 w-4 text-gray-400 shrink-0" />
-                <a href={`mailto:${inst.email}`} className="hover:text-primary transition">
-                  {inst.email}
+                <a href={`mailto:${m.email}`} className="hover:text-indigo-600 transition-colors">
+                  {m.email}
                 </a>
               </div>
             )}
-            {inst.website && (
+            {m.website && (
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Globe className="h-4 w-4 text-gray-400 shrink-0" />
-                <a href={`https://${inst.website}`} target="_blank" rel="noreferrer" className="hover:text-primary transition">
-                  {inst.website}
+                <a
+                  href={`https://${m.website}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-indigo-600 transition-colors"
+                >
+                  {m.website}
                 </a>
               </div>
             )}
           </div>
-
-          {/* Footer note
-          <p className="text-xs text-gray-400 mt-4 text-center">
-            📍 Located in Karari, Kaushambi — ~45 km from Allahabad. Wi-Fi campus with own transport.
-          </p> */}
         </div>
       </div>
     </div>
@@ -276,41 +295,86 @@ const Institutions = () => {
   const [selectedInst, setSelectedInst] = useState(null);
 
   return (
-    <section id="institutions" className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="institutions" className="bg-[var(--bg-surface,#f8fafc)] py-20 px-[5%]">
 
-        {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Institutions</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Centers of Academic Excellence</h2>
-          <p className="text-gray-600">Diverse educational opportunities under one roof, catering to various disciplines and aspirations.</p>
+      {/* Header */}
+      <div className="flex justify-between items-end flex-wrap gap-6 mb-12">
+        <div>
+          <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-1">
+            Our Institutions
+          </div>
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Schools &amp; Colleges</h2>
+          <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-indigo-500 to-indigo-700" />
         </div>
+        <p className="text-sm text-gray-500 leading-relaxed max-w-[330px]">
+          From engineering to law to schooling — academic excellence across every discipline.
+        </p>
+      </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {institutions.map((inst, idx) => (
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {institutions.map((inst, idx) => (
+          <div
+            key={idx}
+            className="relative bg-white border border-gray-200 rounded-[18px] p-8 overflow-hidden
+              transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)]
+              hover:-translate-y-2 hover:border-indigo-200 hover:shadow-[0_20px_40px_rgba(79,70,229,0.12)]
+              group"
+          >
+            {/* Top accent bar on hover */}
             <div
-              key={idx}
-              className={`${inst.bgColor} rounded-2xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl group`}
-            >
-              <div className="inline-flex p-3 rounded-xl bg-white shadow-md mb-4">
-                <inst.icon className={`h-6 w-6 ${inst.iconColor}`} />
+              className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${inst.accentClass}
+                scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+            />
+
+            {/* Glow overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+            <div className="relative z-10">
+              <div className="text-[2.4rem] mb-4">{inst.icon}</div>
+              <div className="text-[1.1rem] font-bold text-gray-900 leading-snug mb-1">{inst.name}</div>
+              <div className="text-[0.71rem] font-semibold text-indigo-600 leading-snug mb-3">
+                {inst.affiliation}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{inst.name}</h3>
-              <p className="text-gray-600 text-sm mb-3">{inst.description}</p>
-              <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-200">
-                <span className="text-xs font-medium text-gray-500">{inst.courses}</span>
+              <p className="text-[0.83rem] text-gray-500 leading-[1.75] mb-4">{inst.desc}</p>
+
+              {/* Course tags */}
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {inst.courses.map((c, i) => (
+                  <span
+                    key={i}
+                    className="bg-indigo-50 text-indigo-600 border border-indigo-100 text-[0.68rem] font-medium px-2.5 py-0.5 rounded-full"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+
+              {/* Footer: Visit Website + Read More */}
+              <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
+                <a
+                  href={inst.website.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-indigo-600 text-[0.8rem] font-semibold
+                    transition-all duration-300 hover:gap-2"
+                >
+                  Visit Website →
+                </a>
+
                 <button
                   onClick={() => setSelectedInst(inst)}
-                  className="cursor-pointer text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
+                  className="inline-flex items-center gap-1 text-[0.8rem] font-semibold text-indigo-600
+                    bg-indigo-50 border border-indigo-100 rounded-full px-3.5 py-1
+                    hover:bg-indigo-600 hover:text-white hover:border-indigo-600
+                    transition-all duration-250 cursor-pointer"
                 >
-                  Read More <ChevronRight className="h-4 w-4" />
+                  Read More <ChevronRight className="h-3.5 w-3.5" />
                 </button>
               </div>
             </div>
-          ))}
-        </div>
-
+          </div>
+        ))}
       </div>
 
       {/* Modal */}

@@ -6,6 +6,11 @@ import Institutions from './components/Institutions';
 import News from './components/News';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Notice from './components/Notice';
+import CampusAndStats from './components/CampusAndStats';
+import OtherInstitutions from "./components/OtherInstitutions";
+import Downloads from "./components/Downloads";
+import Gallery from './components/Gallery';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -33,12 +38,17 @@ function App() {
 
   return (
     <div className="bg-white">
+      <Notice/>
       <Navbar activeSection={activeSection} />
       <main>
         <Hero />
         <About />
         <Institutions />
+        <CampusAndStats/>
+        <Gallery/>
         <News />
+        <OtherInstitutions />
+      <Downloads />
         <Contact />
       </main>
       <Footer />

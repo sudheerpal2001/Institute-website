@@ -14,11 +14,12 @@ const Navbar = ({ activeSection }) => {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'institutions', label: 'Institution' },
-    { id: 'news', label: 'News' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', label: 'HOME' },
+    { id: 'about', label: 'ABOUT' },
+    { id: 'institutions', label: 'INSTITUTIONS' },
+    { id: 'news', label: 'NEWS' },
+    { id: 'gallery', label: 'GALLERY' },
+    { id: 'contact', label: 'CONTACT' },
   ];
 
   const scrollToSection = (id) => {
@@ -30,7 +31,7 @@ const Navbar = ({ activeSection }) => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white shadow-md py-5'
     }`}>
       <div className="container mx-auto px-4 md:px-6">
@@ -52,13 +53,13 @@ const Navbar = ({ activeSection }) => {
                 onClick={() => scrollToSection(item.id)}
                 className={`relative cursor-pointer px-2 py-1 text-sm font-medium transition-colors ${
                   activeSection === item.id
-                    ? 'text-primary'
-                    : 'text-gray-600 hover:text-primary'
+                    ? 'text-blue-600'
+                    : 'text-gray-600 hover:text-blue-600'
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <span className="absolute cursor-pointer bottom-0 left-0 w-full h-0.5 bg-primary rounded-full"></span>
+                  <span className="absolute cursor-pointer bottom-0 left-0 w-full h-0.5 bg-blue-600 rounded-full"></span>
                 )}
               </button>
             ))}
@@ -66,8 +67,8 @@ const Navbar = ({ activeSection }) => {
 
           {/* Contact CTA */}
           <div className="hidden md:block">
-            <a href="tel:18002005802" className="bg-primary text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition shadow-md">
-              Call Now: 1800-200-5802
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7dF_JQTOO8dLATLP15WIZH5pI4ubGFxw0cech7rqFBzFQNw/viewform" className="bg-blue-200/40 text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition border border-gray-400">
+              Register Now
             </a>
           </div>
 
@@ -85,7 +86,7 @@ const Navbar = ({ activeSection }) => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`block w-full text-left px-2 py-2 text-base ${
-                  activeSection === item.id ? 'text-primary font-semibold' : 'text-gray-600'
+                  activeSection === item.id ? 'text-blue-400 font-semibold' : 'text-gray-600'
                 }`}
               >
                 {item.label}

@@ -1,245 +1,279 @@
 import React from 'react';
-import { GraduationCap, Heart, Phone, Mail, MapPin, Globe, Download } from 'lucide-react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
+// ─── Data ──────────────────────────────────────────────────────────
+const institutions = [
+  { label: "Engineering College",  href: "http://www.drce.org" },
+  { label: "Law College",          href: "http://rizvilaw.in" },
+  { label: "Degree College",       href: "http://www.rizvidegree.co.in" },
+  { label: "College of Education", href: "http://www.rizvidegree.co.in/bed.html" },
+  { label: "Springfield School",   href: "http://www.drsf.co.in" },
+  { label: "Learners' Academy",    href: "http://www.rlajnp.co.in" },
+];
+
+const quickLinks = [
+  { label: "Home",         href: "#home" },
+  { label: "About Us",     href: "#aboutUs" },
+  { label: "Institutions", href: "#features" },
+  { label: "Campus Life",  href: "#campus" },
+  { label: "Downloads",    href: "#downloads" },
+  { label: "Apply Now",    href: "https://forms.gle/UfrdXMKE1wKckco6A", external: true },
+];
+
+const contactItems = [
+  {
+    icon: "📍",
+    label: "Address",
+    value: <>Karari, Kaushambi,<br />Uttar Pradesh – 212 206</>,
+  },
+  {
+    icon: "📞",
+    label: "Phone",
+    value: (
+      <>
+        <a href="tel:7080205245" className="hover:text-indigo-400 transition-colors">7080205245</a>
+        {" / "}
+        <a href="tel:7080205246" className="hover:text-indigo-400 transition-colors">7080205246</a>
+      </>
+    ),
+  },
+  {
+    icon: "✉️",
+    label: "Email",
+    value: (
+      <>
+        <a href="mailto:contactus@drce.org" className="hover:text-indigo-400 transition-colors block">contactus@drce.org</a>
+        <a href="mailto:rizvi_education@hotmail.com" className="hover:text-indigo-400 transition-colors block">rizvi_education@hotmail.com</a>
+      </>
+    ),
+  },
+  {
+    icon: "🕘",
+    label: "Office Hours",
+    value: "Mon – Sat, 9:00 AM – 5:00 PM",
+  },
+];
+
+const socialLinks = [
+  { label: "Facebook",  aria: "Facebook",  char: "f" },
+  { label: "Twitter",   aria: "Twitter",   char: "𝕏" },
+  { label: "Instagram", aria: "Instagram", char: "ig" },
+  { label: "YouTube",   aria: "YouTube",   char: "▶" },
+  { label: "LinkedIn",  aria: "LinkedIn",  char: "in" },
+];
+
+const bottomLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Use",   href: "#" },
+  { label: "Sitemap",        href: "#" },
+  { label: "Contact",        href: "#newsletter" },
+];
+
+// ─── Shared style helpers ──────────────────────────────────────────
+const mutedText   = "text-[rgba(240,235,224,0.48)]";
+const mutedText35 = "text-[rgba(240,235,224,0.35)]";
+const mutedText50 = "text-[rgba(240,235,224,0.50)]";
+
+// ─── Footer Component ──────────────────────────────────────────────
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const quickLinks = [
-    { label: 'Home', id: 'home' },
-    { label: 'About Us', id: 'about' },
-    { label: 'Institutions', id: 'institutions' },
-    { label: 'News & Events', id: 'news' },
-    { label: 'Contact Us', id: 'contact' },
-  ];
-
-  const institutions = [
-    { label: 'College of Engineering', id: 'institutions' },
-    { label: 'College of Law', id: 'institutions' },
-    { label: 'College of Education', id: 'institutions' },
-    { label: 'A.H. Rizvi Degree College', id: 'institutions' },
-    { label: 'Springfield School', id: 'institutions' },
-    { label: "Learner's Academy", id: 'institutions' },
-  ];
-
-  const brochures = [
-    { label: 'Engineering & Management', url: 'https://www.rizvigroup.org/downloads/engineeringCollege_Prospectous.pdf' },
-    { label: 'Degree College', url: 'https://www.rizvigroup.org/downloads/degreeCollege_Prospectous.pdf' },
-    { label: 'B.Ed. & D.El.Ed.', url: 'https://www.rizvigroup.org/downloads/degreeCollege_Prospectous.pdf' },
-    { label: 'Law College', url: 'https://www.rizvigroup.org/downloads/lawCollege_Prospectous.pdf' },
-    { label: 'Springfield School', url: 'https://www.rizvigroup.org/downloads/springfieldSchool_Prospectous.pdf' },
-    { label: "Learner's Academy", url: 'https://www.rizvigroup.org/downloads/learners_Prospectous.pdf' },
-  ];
-
-  const approvals = [
-    'AICTE, New Delhi',
-    'Bar Council of India (BCI)',
-    'NCTE, Uttar Pradesh',
-    'CBSE, New Delhi',
-    'AKTU, Lucknow',
-    'Prof. Rajendra Singh University',
-    'SCERT, Uttar Pradesh',
-  ];
-
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer
+      className="border-t border-[rgba(37,99,235,0.2)]"
+      style={{ background: 'var(--footer-bg, #080D1A)', color: 'rgba(240,235,224,0.7)' }}
+    >
+      {/* ── Top Grid ── */}
+      <div
+        className="px-[5%] py-[60px_5%_50px] grid gap-14
+          grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.3fr]
+          border-b border-[rgba(255,255,255,0.06)]"
+        style={{ paddingTop: '60px', paddingBottom: '50px' }}
+      >
 
-      {/* ── Top Band ── */}
-      <div className="bg-primary/90 py-4">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white font-semibold text-sm">
-            📢 Admissions Open for Session 2025-26 — Apply Now!
+        {/* Brand Column */}
+        <div>
+          {/* Logo row */}
+          <div className="flex items-center gap-4 mb-5">
+            <img
+              src="Trust_logo.jpg"
+              alt="Dr. Akhtar Rizvi Educational Trust"
+              className="h-14 w-auto rounded-lg border border-[rgba(37,99,235,0.3)]"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
+            <div>
+              <div
+                className="text-[1.15rem] font-bold leading-[1.2] font-[Poppins,serif]"
+                style={{ color: 'var(--primary, #4f46e5)' }}
+              >
+                Dr. Akhtar Rizvi<br />Educational Trust
+              </div>
+              <div className="text-[0.68rem] tracking-[1px] mt-1 text-[rgba(240,235,224,0.35)]">
+                Est. 1985 · Kaushambi, Uttar Pradesh
+              </div>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className={`text-[0.82rem] leading-[1.8] ${mutedText50} mb-[1.4rem] max-w-[280px]`}>
+            Building a knowledge-driven society through excellence in engineering, law,
+            arts, science, education &amp; schooling across Uttar Pradesh and Maharashtra.
           </p>
+
+          {/* Toll Free */}
           <a
             href="tel:18002005802"
-            className="bg-white text-black text-sm font-bold px-5 py-1.5 rounded-full hover:bg-gray-100 transition shrink-0"
+            className="inline-flex items-center gap-2 text-[0.82rem] font-bold tracking-[0.3px]
+              px-[1.1rem] py-[0.55rem] rounded-[6px]
+              bg-[rgba(37,99,235,0.1)] border border-[rgba(37,99,235,0.25)]
+              transition-all duration-300 hover:bg-[rgba(37,99,235,0.18)]"
+            style={{ color: 'var(--primary, #4f46e5)' }}
           >
-            Call: 1800-200-5802
+            ☎️ Toll Free: 1800-200-5802
           </a>
+
+          {/* Social Icons */}
+          <div className="flex gap-[0.6rem] mt-5">
+            {socialLinks.map((s, i) => (
+              <a
+                key={i}
+                href="#"
+                aria-label={s.aria}
+                title={s.label}
+                className="w-[34px] h-[34px] rounded-[8px] flex items-center justify-center
+                  text-[0.75rem] text-[rgba(240,235,224,0.5)]
+                  bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]
+                  transition-all duration-300
+                  hover:bg-[rgba(37,99,235,0.15)] hover:border-[rgba(37,99,235,0.35)]
+                  hover:text-[var(--primary,#4f46e5)]
+                  no-underline"
+              >
+                {s.char}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Institutions Column */}
+        <div>
+          <ColTitle>Institutions</ColTitle>
+          <ul className="flex flex-col gap-[0.7rem]">
+            {institutions.map((item, i) => (
+              <li key={i}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-[0.82rem] ${mutedText} block leading-[1.5]
+                    transition-all duration-200 hover:text-[var(--primary,#4f46e5)] hover:pl-[5px]`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quick Links Column */}
+        <div>
+          <ColTitle>Quick Links</ColTitle>
+          <ul className="flex flex-col gap-[0.7rem]">
+            {quickLinks.map((item, i) => (
+              <li key={i}>
+                <a
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className={`text-[0.82rem] ${mutedText} block leading-[1.5]
+                    transition-all duration-200 hover:text-[var(--primary,#4f46e5)] hover:pl-[5px]`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact Column */}
+        <div>
+          <ColTitle>Contact Us</ColTitle>
+          <div className="flex flex-col gap-4">
+            {contactItems.map((item, i) => (
+              <div key={i} className="flex items-start gap-[0.85rem]">
+                {/* Icon box */}
+                <div
+                  className="w-[30px] h-[30px] mt-[2px] rounded-[7px] flex-shrink-0
+                    flex items-center justify-center text-[0.85rem]
+                    bg-[rgba(37,99,235,0.08)] border border-[rgba(37,99,235,0.15)]"
+                >
+                  {item.icon}
+                </div>
+                <div className={`text-[0.8rem] ${mutedText} leading-[1.6]`}>
+                  <div
+                    className="text-[0.62rem] font-bold uppercase tracking-[1.2px] mb-[0.15rem]"
+                    style={{ color: 'var(--primary, #4f46e5)' }}
+                  >
+                    {item.label}
+                  </div>
+                  {item.value}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* ── Main Footer ── */}
-      <div className="container mx-auto px-4 md:px-6 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-          {/* Col 1 — Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-primary/20 p-2 rounded-xl">
-                <GraduationCap className="h-7 w-7 text-accent" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold leading-tight">Rizvi Group</h3>
-                <p className="text-xs text-gray-400">of Institutions</p>
-              </div>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              Dr. Akhtar Rizvi Educational Trust — a Public Charitable Trust established in 1985, committed to promoting quality education at all levels.
-            </p>
-
-            {/* Social */}
-            <div className="flex items-center gap-3">
-              {[
-                { Icon: FaFacebook, href: '#', label: 'Facebook' },
-                { Icon: FaTwitter, href: '#', label: 'Twitter' },
-                { Icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-                { Icon: FaYoutube, href: '#', label: 'YouTube' },
-              ].map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="bg-gray-800 hover:bg-primary p-2 rounded-lg transition"
-                >
-                  <Icon className="h-4 w-4 text-gray-300" />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Col 2 — Quick Links + Institutions */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Quick Links</h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-gray-400 hover:text-white text-sm flex items-center gap-2 transition group"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-primary group-hover:w-2 transition-all" />
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300 mt-7 mb-4">Our Institutions</h4>
-            <ul className="space-y-2.5">
-              {institutions.map((inst) => (
-                <li key={inst.label}>
-                  <button
-                    onClick={() => scrollToSection(inst.id)}
-                    className="text-gray-400 hover:text-white text-sm flex items-center gap-2 transition group"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-accent group-hover:w-2 transition-all" />
-                    {inst.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 3 — Downloads + Approvals */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Download Brochures</h4>
-            <ul className="space-y-2.5">
-              {brochures.map((b) => (
-                <li key={b.label}>
-                  <a
-                    href={b.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    download
-                    className="text-gray-400 hover:text-white text-sm flex items-center gap-2 transition group"
-                  >
-                    <Download className="h-3.5 w-3.5 text-primary shrink-0 group-hover:text-accent transition" />
-                    {b.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300 mt-7 mb-4">Approved & Affiliated</h4>
-            <ul className="space-y-2">
-              {approvals.map((a) => (
-                <li key={a} className="text-gray-400 text-xs flex items-start gap-2">
-                  <span className="mt-1.5 h-1 w-1 rounded-full bg-green-400 shrink-0" />
-                  {a}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 4 — Contact */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm leading-relaxed">
-                  Rizvi Educational Campus, Karari, District Kaushambi,<br />
-                  Uttar Pradesh — 212 206
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                <div className="text-sm space-y-1">
-                  <a href="tel:18002005802" className="block text-gray-400 hover:text-white transition">
-                    Toll Free: 1800-200-5802
-                  </a>
-                  <a href="tel:7080205252" className="block text-gray-400 hover:text-white transition">
-                    Phone: 7080205252
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                <div className="text-sm space-y-1">
-                  <a href="mailto:contactus@drce.org" className="block text-gray-400 hover:text-white transition">
-                    contactus@drce.org
-                  </a>
-                  <a href="mailto:admissions@rizvigroup.org" className="block text-gray-400 hover:text-white transition">
-                    admissions@rizvigroup.org
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <Globe className="h-4 w-4 text-primary shrink-0" />
-                <a
-                  href="https://www.drce.org"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-400 hover:text-white text-sm transition"
-                >
-                  www.drce.org
-                </a>
-              </li>
-            </ul>
-
-            {/* Map Link */}
-            <a
-              href="https://maps.google.com/?q=Karari,Kaushambi,UttarPradesh"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs px-4 py-2 rounded-lg transition"
-            >
-              <MapPin className="h-3.5 w-3.5 text-primary" />
-              View on Google Maps
-            </a>
-          </div>
-
-        </div>
+      {/* ── Embedded Map ── */}
+      <div className="px-[5%] border-t border-[rgba(255,255,255,0.06)]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.1!2d81.423434!3d25.460318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb3a1c2d4e5f6a7b8!2sRizvi+Educational+Campus!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Rizvi Educational Campus Location"
+          className="block w-full h-[200px] border-0 border-b border-[rgba(37,99,235,0.12)]"
+          style={{ filter: 'brightness(0.85) saturate(0.7)' }}
+        />
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="border-t border-gray-800 py-5">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500">
-          <p>© {currentYear} Rizvi Group of Institutions. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Made with <Heart className="h-3 w-3 text-red-500 fill-red-500 mx-0.5" /> for education
-          </p>
+      <div
+        className="px-[5%] py-[1.4rem] flex justify-between items-center flex-wrap gap-3
+          border-t border-[rgba(255,255,255,0.06)]"
+      >
+        <div className={`text-[0.76rem] ${mutedText35}`}>
+          © 2025{" "}
+          <span style={{ color: 'var(--primary, #4f46e5)' }}>Rizvi Group of Institutions</span>.
+          {" "}All Rights Reserved. · Dr. Akhtar Rizvi Educational Trust
+        </div>
+
+        <div className="flex items-center gap-5">
+          {bottomLinks.map((link, i) => (
+            <React.Fragment key={i}>
+              <a
+                href={link.href}
+                className={`text-[0.73rem] ${mutedText35}
+                  transition-colors duration-200 hover:text-[var(--primary,#4f46e5)]`}
+              >
+                {link.label}
+              </a>
+              {i < bottomLinks.length - 1 && (
+                <span className="text-[0.7rem] text-[rgba(240,235,224,0.15)]">|</span>
+              )}
+            </React.Fragment>
+          ))}
         </div>
       </div>
-
     </footer>
   );
 };
+
+// ─── Small helper: Column Title ────────────────────────────────────
+const ColTitle = ({ children }) => (
+  <div
+    className="text-[0.68rem] font-bold uppercase tracking-[2.5px]
+      text-[rgba(240,235,224,0.9)] mb-[1.4rem] pb-[0.8rem]
+      border-b border-[rgba(37,99,235,0.15)]"
+  >
+    {children}
+  </div>
+);
 
 export default Footer;
