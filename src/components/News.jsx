@@ -23,7 +23,7 @@ const newsItems = [
     title: "Merit Scholarships Available for New Academic Year",
     desc: "Rizvi Group offers merit-based scholarships for academically excellent students joining engineering, law, and degree programs. Contact the admissions office for eligibility.",
     linkLabel: "Contact Us →",
-    linkHref: "#newsletter",
+    linkHref: "#contact",
     external: false,
   },
 ];
