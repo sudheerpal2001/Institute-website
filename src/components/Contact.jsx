@@ -119,17 +119,17 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 px-[5%]"
+      className="py-10 px-[5%]"
       style={{ background: 'var(--bg-base, #f1f5f9)' }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-20 items-start">
 
         {/* ── Left: Info ── */}
         <Reveal>
-          <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-1">
+          <div className="text-md font-bold uppercase tracking-widest text-indigo-600 mb-1">
             Get In Touch
           </div>
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-3">Contact Us</h2>
+          <h2 className="text-5xl font-bold text-black mb-3">Contact Us</h2>
           <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-indigo-500 to-indigo-700 mb-4" />
           <p className="text-sm text-gray-500 leading-relaxed">
             Reach out for admissions queries, campus visits, or any information. Our team is always ready to help.

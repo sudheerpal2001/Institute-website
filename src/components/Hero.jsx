@@ -75,7 +75,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative pt-5 pb-16 md:pt-12 md:pb-24 overflow-hidden">
+    <section id="home" className="relative pt-2 pb-5 md:pt-6 md:pb-12 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50 -z-10"></div>
       <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
@@ -96,7 +96,7 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Shaping Futures Since{' '}
+              Shaping <span className='italic text-blue-600'>Futures</span> Since{' '}
               <span className="text-primary relative inline-block">
                 1985
                 <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">

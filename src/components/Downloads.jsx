@@ -14,13 +14,13 @@ const downloads = [
 const SectionHeader = ({ tag, title, desc }) => (
   <div>
     <span
-      className="inline-block text-xs font-semibold tracking-[0.18em] uppercase px-3 py-1 rounded-full mb-4"
+      className="inline-block text-md font-semibold tracking-[0.18em] uppercase px-3 py-1 rounded-full mb-3"
       style={{ color: PRIMARY, }}
     >
       {tag}
     </span>
     <h2
-      className="text-4xl font-bold leading-tight mb-3"
+      className="text-5xl font-bold leading-tight mb-3"
       style={{ fontFamily: "'Cormorant Garamond', serif", color: "#1a1a1a" }}
     >
       {title}

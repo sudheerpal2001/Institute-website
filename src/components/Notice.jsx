@@ -2,10 +2,10 @@ import React from "react";
 
 const Notice = () => {
   return (
-    <div className="relative z-[1001] bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 text-white px-[5%] py-3 flex items-center gap-4 overflow-hidden text-xs font-semibold">
+    <div className="relative z-[1001] bg-gradient-to-r from-blue-900 via-blue-600 to-blue-900 text-white px-[5%] py-3 flex items-center gap-4 overflow-hidden text-md ">
       
       {/* NOTICE LABEL */}
-      <span className="whitespace-nowrap bg-white text-blue-900 px-3 py-[2px] rounded text-[10px] tracking-widest font-bold shrink-0">
+      <span className="whitespace-nowrap bg-white text-blue-900 px-3 py-[2px] rounded text-[12px] tracking-widest font-bold shrink-0">
         NOTICE
       </span>
 

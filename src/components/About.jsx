@@ -31,8 +31,7 @@ const About = () => {
     <section id="about" className=" bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-6">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">About Us</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Legacy of Excellence in Education</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Legacy of Excellence in Education</h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
         </div>
 
@@ -105,7 +104,6 @@ const About = () => {
         </div>
         <div className="text-center max-w-3xl mx-auto mb-6">
           <span className="text-primary  text-blue-500  font-semibold text-md uppercase tracking-wider border border-0 border-b pb-4">What's Our Chairman Say ?</span>
-          {/* <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Legacy of Excellence in Education</h2> */}
           <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
         </div>
         {/* Chairman Section */}
@@ -122,8 +120,8 @@ const About = () => {
               </div>
             </div>
             <div className="order-2 md:order-1">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{chairmanInfo.name}</h3>
-              <p className="text-primary font-medium mb-4">{chairmanInfo.title}</p>
+              <h3 className="text-3xl md:text-5xl font-bold text-black mb-2">{chairmanInfo.name}</h3>
+              <p className="text-xl font-medium mb-4">{chairmanInfo.title}</p>
               <p className="text-gray-600 leading-relaxed mb-4">{chairmanInfo.description}</p>
               <p className="text-gray-600 italic border-l-4 border-primary pl-4">{chairmanInfo.philosophy}</p>
             </div>
@@ -132,20 +130,45 @@ const About = () => {
 
         {/* Vision & Mission */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition">
-            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-              <Target className="h-6 w-6 text-primary" />
+
+          {/* Vision Card */}
+          <div className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+            {/* Top animated border */}
+            <div className="relative h-[4px] bg-gray-100 flex-shrink-0 overflow-hidden">
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-700
+                  translate-x-[-100%] group-hover:translate-x-0
+                  transition-transform duration-500 ease-in-out"
+              />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
-            <p className="text-gray-600 leading-relaxed">{visionMission.vision}</p>
-          </div>
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition">
-            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-              <Globe className="h-6 w-6 text-primary" />
+            <div className="p-8">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Target className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed">{visionMission.vision}</p>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
-            <p className="text-gray-600 leading-relaxed">{visionMission.mission}</p>
           </div>
+
+          {/* Mission Card */}
+          <div className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+            {/* Top animated border */}
+            <div className="relative h-[4px] bg-gray-100 flex-shrink-0 overflow-hidden">
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-700
+                  translate-x-[-100%] group-hover:translate-x-0
+                  transition-transform duration-500 ease-in-out"
+              />
+            </div>
+            <div className="p-8">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Globe className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed">{visionMission.mission}</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

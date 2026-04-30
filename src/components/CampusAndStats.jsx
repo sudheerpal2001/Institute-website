@@ -109,11 +109,11 @@ const CampusAndStats = () => {
       {/* ── Campus Section ── */}
       <section
         id="campus"
-        className="py-20 px-[5%]"
+        className="py-5 px-[5%]"
         style={{ background: 'var(--bg-base, #f1f5f9)' }}
       >
         {/* Header */}
-        <Reveal className="text-center mb-12">
+        <Reveal className="text-center mb-6">
           <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-1">
             Campus Life
           </div>
@@ -161,7 +161,7 @@ const CampusAndStats = () => {
       {/* ── Stats Banner ── */}
       <div
         ref={statsRef}
-        className="relative py-20 px-[5%] overflow-hidden"
+        className="relative py-17 px-[5%] overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #ede9fe 100%)' }}
       >
         {/* ── Animated SVG Background ── */}

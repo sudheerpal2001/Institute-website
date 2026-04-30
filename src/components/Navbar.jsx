@@ -38,15 +38,15 @@ const Navbar = ({ activeSection }) => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('home')}>
-            <GraduationCap className="h-8 w-8 text-primary" />
+            <GraduationCap className="h-10 w-10 text-primary" />
             <div>
-              <h1 className="text-xl font-bold text-primary">Rizvi Group</h1>
-              <p className="text-xs text-gray-500 -mt-1">of Institutions</p>
+              <h1 className="text-2xl font-bold text-blue-600">Rizvi Group</h1>
+              <p className="text-md text-gray-500 -mt-1">of Institutions</p>
             </div>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-5">
             {navItems.map((item) => (
               <button
                 key={item.id}

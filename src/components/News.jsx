@@ -94,8 +94,14 @@ const News = () => {
                   hover:shadow-[0_20px_40px_rgba(79,70,229,0.12)]
                   group h-full flex flex-col"
               >
-                {/* Top accent bar */}
-                <div className="h-[4px] bg-gradient-to-r from-indigo-500 to-indigo-700 flex-shrink-0" />
+                {/* Top animated border — left to right on hover */}
+                <div className="relative h-[4px] bg-gray-100 flex-shrink-0 overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-700
+                      translate-x-[-100%] group-hover:translate-x-0
+                      transition-transform duration-500 ease-in-out"
+                  />
+                </div>
 
                 {/* Body */}
                 <div className="p-[1.6rem] flex flex-col flex-1">
