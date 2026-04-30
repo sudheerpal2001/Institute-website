@@ -140,7 +140,7 @@ const Hero = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-xl"></div>
               <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <video
-                  src="/public/Videos/HOSTEL ALL.mp4"
+                  src="/public/Videos/HOSTELALL.mp4"
                   autoPlay
                   loop
                   muted
