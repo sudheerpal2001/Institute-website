@@ -20,75 +20,55 @@ const galleryItems = [
   {
     src: Image1,
     thumb: Image1 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
+    // caption: "Main Campus Building",
+    // tag: "Campus",
   },
   {
     src: Image2,
     thumb: Image2 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
   },
   {
       src: Image3,
       thumb: Image3 ,
-      caption: "Main Campus Building",
-      tag: "Campus",
     },
     {
       src: Image4,
       thumb: Image4 ,
-      caption: "Main Campus Building",
-      tag: "Campus",
     },
   {
     src: Image5,
     thumb: Image5 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
   },
   {
     src: Image6,
     thumb: Image6 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
   },
   {
     src: Image7,
     thumb: Image7 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
+
   },
   {
     src: Image8,
     thumb: Image8 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
   },
   {
     src: Image9,
     thumb: Image9 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
+
   },
   {
     src: Image10,
     thumb: Image10 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
   },
   
   {
     src: Image11,
     thumb: Image11 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
   },
   {
     src: Image12,
     thumb: Image12 ,
-    caption: "Main Campus Building",
-    tag: "Campus",
   },
 ];
 
