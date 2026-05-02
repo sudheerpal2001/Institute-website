@@ -73,10 +73,10 @@ const News = () => {
     >
       {/* Header */}
       <Reveal>
-        <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-1">
+        <div className="text-md font-bold uppercase tracking-widest text-indigo-600 mb-1">
           Latest Updates
         </div>
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-3">News &amp; Announcements</h2>
+        <h2 className="text-5xl font-bold text-gray-900 mb-3">News &amp; Announcements</h2>
         <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-indigo-500 to-indigo-700" />
       </Reveal>
 

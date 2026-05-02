@@ -114,10 +114,10 @@ const CampusAndStats = () => {
       >
         {/* Header */}
         <Reveal className="text-center mb-6">
-          <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-1">
+          <div className="text-md font-bold uppercase tracking-widest text-indigo-600 mb-1">
             Campus Life
           </div>
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-3">World-Class Facilities</h2>
+          <h2 className="text-5xl font-bold text-gray-900 mb-3">World-Class Facilities</h2>
           <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-indigo-500 to-indigo-700 mx-auto mb-4" />
           <p className="text-sm text-gray-500 leading-relaxed max-w-md mx-auto">
             Our sprawling 30-acre campus is designed to nurture students holistically — academically,

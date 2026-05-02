@@ -35,13 +35,13 @@ const Navbar = ({ activeSection }) => {
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white shadow-md py-5'
     }`}>
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-evenly gap-15 items-center">
           {/* Logo */}
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('home')}>
-            <GraduationCap className="h-10 w-10 text-primary" />
+            <img src="/Images/logo.jpeg" alt="" className='h-10 w-10' />
             <div>
-              <h1 className="text-2xl font-bold text-blue-600">Rizvi Group</h1>
-              <p className="text-md text-gray-500 -mt-1">of Institutions</p>
+              <h1 className="text-xl font-bold text-blue-700">Dr. Rizvi Group</h1>
+              <p className="text-sm text-gray-500 -mt-1">of Institutions</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ const Navbar = ({ activeSection }) => {
 
           {/* Contact CTA */}
           <div className="hidden md:block">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7dF_JQTOO8dLATLP15WIZH5pI4ubGFxw0cech7rqFBzFQNw/viewform" className="bg-blue-200/40 text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition border border-gray-400">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7dF_JQTOO8dLATLP15WIZH5pI4ubGFxw0cech7rqFBzFQNw/viewform" className="bg-blue-500 text-white px-5 py-2 rounded-sm text-sm font-medium hover:bg-white transition border hover:text-blue-500 border-blue-500">
               Register Now
             </a>
           </div>

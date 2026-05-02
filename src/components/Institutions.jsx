@@ -5,7 +5,7 @@ const institutions = [
   {
     name: "Dr. Rizvi College of Engineering & Management",
     affiliation: "AICTE Approved · AKTU, Lucknow · Code: 310",
-    image: "/New folder/Engineering.jpg",
+    image: "/Images/Engineering.jpg",
     courses: ["B.Tech (CS)", "B.Tech (CE)", "B.Tech (EC)", "B.Tech (ME)", "MBA", "Polytechnic"],
     website: { url: "http://www.drce.org", label: "www.drce.org" },
     accentClass: "from-indigo-500 to-indigo-700",
@@ -44,7 +44,7 @@ const institutions = [
   {
     name: "Dr. Rizvi College of Law",
     affiliation: "BCI Approved · Rajju Bhaiya University · Code: 03060",
-    image: "/New folder/Hero-image.jpeg",
+    image: "/Images/Hero-image.jpeg",
     courses: ["LL.B. (3 Years)", "BA.LLB (5 Years)"],
     website: { url: "http://rizvilaw.in", label: "rizvilaw.in" },
     accentClass: "from-indigo-500 to-indigo-700",
@@ -69,7 +69,7 @@ const institutions = [
   {
     name: "Dr. Rizvi College of Education",
     affiliation: "NCTE Approved · SCERT, Uttar Pradesh",
-    image: "/New folder/college.jpg",
+    image: "/Images/college.jpg",
     courses: ["B.Ed.", "D.El.Ed."],
     website: { url: "http://www.rizvidegree.co.in", label: "rizvidegree.co.in" },
     accentClass: "from-indigo-500 to-indigo-700",
@@ -94,7 +94,7 @@ const institutions = [
   {
     name: "Dr. A. H. Rizvi Degree College",
     affiliation: "Rajju Bhaiya University · Code: 03063",
-    image: "/New folder/college2.jpg",
+    image: "/Images/college2.jpg",
     courses: ["B.A.", "B.Sc.", "B.Com."],
     website: { url: "http://www.rizvidegree.co.in", label: "rizvidegree.co.in" },
     accentClass: "from-indigo-500 to-indigo-700",
@@ -120,7 +120,7 @@ const institutions = [
   {
     name: "Dr. Rizvi Springfield School",
     affiliation: "CBSE Affiliated · New Delhi · Karari, Kaushambi",
-    image: "/New folder/college3.jpg",
+    image: "/Images/college3.jpg",
     courses: ["Classes I–XII", "CBSE"],
     website: { url: "http://www.drsf.co.in", label: "drsf.co.in" },
     accentClass: "from-indigo-500 to-indigo-700",
@@ -145,7 +145,7 @@ const institutions = [
   {
     name: "Dr. Rizvi Learners' Academy",
     affiliation: "CBSE Affiliated · Jaunpur, Uttar Pradesh",
-    image: "/New folder/learner-academy.jpg",
+    image: "/Images/learner-academy.jpg",
     courses: ["Classes I–XII", "CBSE"],
     website: { url: "http://www.rlajnp.co.in", label: "rlajnp.co.in" },
     accentClass: "from-indigo-500 to-indigo-700",
@@ -189,7 +189,7 @@ const InstitutionModal = ({ inst, onClose }) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 bg-gray-100 hover:bg-blue-200 rounded-full p-1.5 transition-colors"
+          className="absolute top-4 right-4 bg-gray-100 hover:bg-blue-00 rounded-full p-1.5 transition-colors"
         >
           <X className="h-4 w-4 text-gray-600" />
         </button>

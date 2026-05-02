@@ -75,7 +75,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative pt-2 pb-5 md:pt-6 md:pb-12 overflow-hidden">
+    <section id="home" className="relative pt-4 pb-5 md:pt-6 md:pb-12 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50 -z-10"></div>
       <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>

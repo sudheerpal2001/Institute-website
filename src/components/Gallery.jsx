@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
-import Image1 from '../../public/New folder/gallery1.jpeg'
-import Image2 from '../../public/New folder/gallery2.jpeg'
-import Image3 from '../../public/New folder/gallery3.jpeg'
-import Image4 from '../../public/New folder/gallery4.jpeg'
-import Image5 from '../../public/New folder/gallery5.jpeg'
-import Image6 from '../../public/New folder/gallery6.jpeg'
-import Image7 from '../../public/New folder/gallery7.jpeg'
-import Image8 from '../../public/New folder/gallery8.jpeg'
-import Image9 from '../../public/New folder/gallery9.jpeg'
-import Image10 from '../../public/New folder/gallery10.jpeg'
-import Image11 from '../../public/New folder/gallery11.jpeg'
-import Image12 from '../../public/New folder/gallery12.jpeg'
+import Image1 from '../../public/Images/gallery1.jpeg'
+import Image2 from '../../public/Images/gallery2.jpeg'
+import Image3 from '../../public/Images/gallery3.jpeg'
+import Image4 from '../../public/Images/gallery4.jpeg'
+import Image5 from '../../public/Images/gallery5.jpeg'
+import Image6 from '../../public/Images/gallery6.jpeg'
+import Image7 from '../../public/Images/gallery7.jpeg'
+import Image8 from '../../public/Images/gallery8.jpeg'
+import Image9 from '../../public/Images/gallery9.jpeg'
+import Image10 from '../../public/Images/gallery10.jpeg'
+import Image11 from '../../public/Images/gallery11.jpeg'
+import Image12 from '../../public/Images/gallery12.jpeg'
 
 const galleryItems = [
   { src: Image1, thumb: Image1 },
@@ -178,7 +178,7 @@ const Gallery = () => {
     >
       {/* Header */}
       <Reveal className="mb-10">
-        <div className="text-[0.7rem] font-bold uppercase tracking-widest text-indigo-600 mb-1">
+        <div className="text-md font-bold uppercase tracking-widest text-indigo-600 mb-1">
           Photo Gallery
         </div>
         <h2 className="text-5xl font-bold text-black mb-3">Life at Rizvi Campus</h2>

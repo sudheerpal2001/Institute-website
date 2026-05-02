@@ -1,7 +1,7 @@
 import React from 'react';
 import { Users, Heart, Target, Globe, Award, BookOpen } from 'lucide-react';
-import FounderImage from '../../public/New folder/chairman.jpg'
-import HeroImage from '../../public/New folder/Hero-image.jpeg'
+import FounderImage from '../../public/Images/chairman.jpg'
+import HeroImage from '../../public/Images/Hero-image.jpeg'
 
 const About = () => {
   const trustInfo = {
